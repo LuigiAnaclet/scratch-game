@@ -1,0 +1,47 @@
+// Dégradé en fond
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #3498db, #8e44ad); 
+  text-align: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+// Titre stylisé
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+// Champ d’entrée pour le pseudo
+.input-pseudo {
+  width: 250px;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+}
+
+// Bouton "Jouer"
+.start-button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  background: #ff4e50;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-button:hover {
+  background: #c92a2a;
+}

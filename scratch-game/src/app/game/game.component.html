@@ -1,0 +1,47 @@
+<div class="game-container">
+  <h2 class="game-title">Joueur : {{ username }}</h2>
+  <h2 class="game-title">Grattez 3 cases</h2>
+<!-- Si le joueur peut encore jouer, afficher la grille cliquable -->
+<div class="grid" *ngIf="attemptsLeft > 0">
+  <div *ngFor="let cell of grid; let i = index" class="cell" (click)="handlePlay(i)">
+        <div class="scratch-animation" *ngIf="scratched[i]">
+          <img src="assets/images/coin.png" class="scratch-hand">
+      </div>
+      <img [src]="selected.includes(i) ? hiddenGifts[i] : cell" alt="Numéro" class="cell-image">
+  </div>
+</div>
+
+<!-- Si le joueur ne peut plus jouer, afficher la grille désactivée -->
+<div class="grid disabled" *ngIf="attemptsLeft === 0">
+  <div *ngFor="let cell of grid; let i = index" class="cell">
+      <img [src]="cell" alt="Numéro" class="cell-image">
+  </div>
+</div>
+<!-- Afficher un message si le joueur ne peut plus jouer -->
+<div class="no-attempts" *ngIf="attemptsLeft === 0">
+  <p class="popup-subtitle"> Vous avez utilisé vos 2 tentatives du jour. Retentez votre chance demain !</p>
+</div>
+
+  <!-- Pop-up du résultat -->
+<div class="popup-overlay" *ngIf="showPopup">
+    <div class="popup">
+    <h2 class="popup-title" [ngClass]="{'win': result === 'Gagné', 'lose': result === 'Perdu'}">{{ result}}</h2>
+    <!-- Affichage du lot gagné -->
+    <div *ngIf="wonPrize && result === 'Gagné'">
+      <p class="popup-subtitle">🎉 Félicitations, vous avez gagné : <strong>{{ wonPrize.name }}</strong> !</p>
+      <img *ngIf="wonPrize.image" [src]="wonPrize.image" alt="{{ wonPrize.name }}" class="prize-image">
+  </div>
+    <p class="popup-subtitle">Historique des 3 dernières parties :</p>
+        <ul class="popup-history">
+            <li *ngFor="let entry of history">
+                {{ entry.date }} -
+                 {{ entry.result }}
+            </li>
+        </ul>
+        <p class="popup-subtitle">Tentatives restantes : {{ attemptsLeft }}</p>
+        <button class="popup-replay" *ngIf="attemptsLeft > 0" (click)="replay()">Rejouer</button>
+        <button class="popup-close" (click)="closePopup()">Fermer</button>
+    </div>
+</div>
+
+</div>
