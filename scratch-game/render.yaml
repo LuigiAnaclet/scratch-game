@@ -4,3 +4,6 @@ services:
     env: static
     buildCommand: npm install && npm run build
     staticPublishPath: dist/scratch-game/browser
+    envVars:
+      - key: NODE_VERSION
+        value: 18
