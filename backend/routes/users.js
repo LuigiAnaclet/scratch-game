@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../database');;
 
 // Route pour créer un utilisateur s'il n'existe pas
-router.post("/api/users", async (req, res) => {
+router.post("/users", async (req, res) => {
     const { username } = req.body;
   
     if (!username) {
@@ -32,7 +32,7 @@ router.post("/api/users", async (req, res) => {
     }
   });
 
-  router.get("/api/users", async (req, res) => {
+  router.get("/users", async (req, res) => {
     try {
         const users = await pool.query("SELECT DISTINCT * FROM participations");
         res.json(users.rows);

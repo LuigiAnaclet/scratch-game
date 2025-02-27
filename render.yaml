@@ -3,4 +3,4 @@ services:
     name: scratch-game
     env: static
     buildCommand: npm install && npm run build
-    staticPublishPath: dist/scratch-game
+    staticPublishPath: dist/scratch-game/browser
