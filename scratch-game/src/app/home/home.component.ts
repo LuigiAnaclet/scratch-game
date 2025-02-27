@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 export class HomeComponent {
   username: string = '';
-  apiUrl: string = 'http://localhost:3000/api';
+  apiUrl: string = environment.apiUrl;
 
   constructor(private router: Router, private http: HttpClient) {}
 

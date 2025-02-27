@@ -3,7 +3,7 @@ const cors = require("cors");
 const { Pool } = require("pg");
 require("dotenv").config();
 const app = express();
-const port = 3000;
+const port = 3600;
 const users = require('./routes/users');
 const history = require('./routes/history');
 app.use(cors());
@@ -15,5 +15,5 @@ app.use(users);
 app.use(history);
 
 app.listen(port, () => {
-  console.log(`Serveur Express lancé sur http://localhost:${port}`);
+  console.log(`Serveur Express lancé`);
 });
