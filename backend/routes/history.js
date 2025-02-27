@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../database'); // Connexion PostgreSQL
 
 //Route pour récupérer l’historique des 3 dernières parties d'un utilisateur spécifique avec formatage de date
-router.get("/api/history/:username", async (req, res) => {
+router.get("/history/:username", async (req, res) => {
     const { username } = req.params;
     
     if (!username) {
@@ -23,7 +23,7 @@ router.get("/api/history/:username", async (req, res) => {
 });
 
 //Route pour sauvegarder une nouvelle partie
-router.post("/api/save", async (req, res) => {
+router.post("/save", async (req, res) => {
     const { username, result } = req.body;
     if (!username || !result) {
         return res.status(400).json({ error: "Le pseudo et le résultat sont requis" });
@@ -42,7 +42,7 @@ router.post("/api/save", async (req, res) => {
 });
 
 // Route pour vérifier si le joueur a perdu 9 fois d'affilée
-router.get("/api/loss-streak/:username", async (req, res) => {
+router.get("/loss-streak/:username", async (req, res) => {
     const { username } = req.params;
 
     if (!username) {
@@ -69,7 +69,7 @@ router.get("/api/loss-streak/:username", async (req, res) => {
 });
 
 // Route pour vérifier le nombre de parties jouées aujourd'hui
-router.get("/api/daily-count/:username", async (req, res) => {
+router.get("/daily-count/:username", async (req, res) => {
     const { username } = req.params;
 
     if (!username) {

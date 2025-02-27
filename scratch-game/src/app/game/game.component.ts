@@ -180,7 +180,7 @@ export class GameComponent {
   this.http.get<number>(`${this.apiUrl}/loss-streak/${this.username}`).subscribe(
       (streak) => {
           //console.log("Série de défaites :", streak);
-          this.isRigged = streak === 4; //Si 9 défaites d'affilée, la grille sera truquée
+          this.isRigged = streak === 9; //Si 9 défaites d'affilée, la grille sera truquée
           this.initializeGrid();
       },
       (error) => {
@@ -196,7 +196,7 @@ fetchDailyAttempts(): void {
 }
   this.http.get<{ attempts: number }>(`${this.apiUrl}/daily-count/${this.username}`).subscribe(
       (data) => {
-        this.attemptsLeft = 100; //data.attempts;
+        this.attemptsLeft = 3; //data.attempts;
         //console.log("Tentatives restantes :", this.attemptsLeft);
       },
       (error) => {
