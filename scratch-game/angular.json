@@ -27,7 +27,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "dist/scratch-game/browser",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/styles.scss"
