@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-game',
@@ -19,7 +20,7 @@ export class GameComponent {
   result: string | null = null; // Résultat du jeu
   showPopup: boolean = false; // Affichage de la pop-up
   hiddenGifts: string[] = []; // Tableau contenant les cadeaux cachés sous les ballons
-  apiUrl: string = 'http://localhost:3000/api';
+  apiUrl: string = environment.apiUrl;
   history: any[] = []; // Stocker les 3 dernières participations
   isRigged: boolean = false;
   attemptsLeft: number = 2;
