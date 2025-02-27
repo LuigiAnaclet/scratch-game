@@ -195,7 +195,7 @@ fetchDailyAttempts(): void {
 }
   this.http.get<{ attempts: number }>(`${this.apiUrl}/daily-count/${this.username}`).subscribe(
       (data) => {
-        this.attemptsLeft = 100; //data.attempts;
+        this.attemptsLeft = data.attempts; //data.attempts;
         //console.log("Tentatives restantes :", this.attemptsLeft);
       },
       (error) => {
