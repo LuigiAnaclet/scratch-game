@@ -32,7 +32,8 @@ export class GameComponent {
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) {
     this.route.params.subscribe(() => {
       this.loadUsername();
-      this.fetchLossStreak(); // Récupérer la série de défaites
+      this.fetchLossStreak();
+      this.fetchDailyAttempts();
     });
   }
 
@@ -188,20 +189,17 @@ export class GameComponent {
 }
 
   // Récupérer le nombre de parties jouées aujourd’hui
-fetchDailyAttempts(): void {
-  if (typeof window === "undefined") {
-    return;
+  fetchDailyAttempts(): void {
+    this.http.get<number>(`${this.apiUrl}/attempts/${this.username}`).subscribe(
+        (attempts: number) => {
+            this.attemptsLeft = Math.max(attempts, 0); // Empêche les valeurs négatives
+        },
+        (error) => {
+            console.error("Erreur lors de la récupération des tentatives restantes :", error);
+        }
+    );
 }
-  this.http.get<{ attempts: number }>(`${this.apiUrl}/daily-count/${this.username}`).subscribe(
-      (data) => {
-        this.attemptsLeft = data.attempts; //data.attempts;
-        //console.log("Tentatives restantes :", this.attemptsLeft);
-      },
-      (error) => {
-          console.error("Erreur lors de la récupération du nombre de tentatives", error);
-      }
-  );
-}
+
 // Fonction pour rejouer
 replay(): void {
   if (this.attemptsLeft > 0) {
