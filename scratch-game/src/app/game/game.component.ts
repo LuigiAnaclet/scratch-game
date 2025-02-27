@@ -32,9 +32,9 @@ export class GameComponent {
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) {
     this.route.params.subscribe(() => {
       this.loadUsername();
-      this.fetchDailyAttempts();
-      this.fetchLossStreak();
       
+      this.fetchLossStreak();
+      this.fetchDailyAttempts();
     });
   }
 
