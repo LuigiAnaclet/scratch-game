@@ -84,7 +84,7 @@ router.get("/daily-count/:username", async (req, res) => {
             [username]
         );
 
-        res.json({ attempts: 3 - parseInt(todayCount.rows[0].count) }); // Renvoie les tentatives restantes
+        res.json({ attempts: 2 - parseInt(todayCount.rows[0].count) }); // Renvoie les tentatives restantes
     } catch (err) {
         console.error("Erreur SQL :", err);
         res.status(500).json({ error: "Erreur lors de la récupération du nombre de parties jouées", details: err.message });
