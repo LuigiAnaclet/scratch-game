@@ -6,8 +6,9 @@
         "Expires": "0"
       }
     },
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/index.html" }
-    ]
+    "root": "dist/scratch-game",
+  "routes": {
+    "/**": "index.html"
+  }
   }
   
