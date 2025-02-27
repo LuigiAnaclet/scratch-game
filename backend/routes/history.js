@@ -80,6 +80,7 @@ router.get("/daily-count/:username", async (req, res) => {
         const todayCount = await pool.query(
             `SELECT COUNT(*) AS count FROM participations 
              WHERE username = $1 
+             AND result != 'En attente' 
              AND date >= CURRENT_DATE`,
             [username]
         );
