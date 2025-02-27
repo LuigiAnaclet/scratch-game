@@ -6,7 +6,7 @@
       "Expires": "0"
     }
   },
-  "root": "dist/scratch-game",
+  "root": "dist/scratch-game/browser",
   "routes": {
     "/**": "/index.html"
   },
