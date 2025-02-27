@@ -221,15 +221,15 @@ replay(): void {
   //Attribution d'un lot aléatoire
   getRandomPrize(): { name: string, image: string } {
     const prizes = [
-        { name: "Voiture", image: "assets/images/car.png", chance: 5 },
-        { name: "Billet d'avion", image: "assets/images/plane_ticket.png", chance: 10 },
+        { name: "Une voiture", image: "assets/images/car.png", chance: 5 },
+        { name: "Un billet d'avion", image: "assets/images/plane_ticket.png", chance: 10 },
         { name: "100€ de bons d'achats", image: "assets/images/gift_card.png", chance: 20 },
-        { name: "Casque audio haut de gamme", image: "assets/images/headphones.png", chance: 15 },
-        { name: "Smartphone", image: "assets/images/smartphone.png", chance: 10 },
-        { name: "Abonnement salle de sport 6 mois", image: "assets/images/gym.png", chance: 15 },
-        { name: "Dîner gastronomique", image: "assets/images/dinner.png", chance: 10 },
-        { name: "Console de jeux", image: "assets/images/console.png", chance: 5 },
-        { name: "Billets de cinéma pour un an", image: "assets/images/cinema.png", chance: 10 }
+        { name: "Un casque audio haut de gamme", image: "assets/images/headphones.png", chance: 15 },
+        { name: "Un smartphone", image: "assets/images/smartphone.png", chance: 10 },
+        { name: "Un abonnement de 6 mois à la salle de sport", image: "assets/images/gym.png", chance: 15 },
+        { name: "Un dîner gastronomique", image: "assets/images/dinner.png", chance: 10 },
+        { name: "Une console de jeux", image: "assets/images/console.png", chance: 5 },
+        { name: "Un an de Billets de cinéma", image: "assets/images/cinema.png", chance: 10 }
     ];
 
     // Création d'un tableau pondéré

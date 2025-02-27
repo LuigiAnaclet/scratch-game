@@ -1,14 +1,14 @@
 {
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "status": 200
+    }
+  ],
   "headers": {
     "/**": {
-      "Cache-Control": "no-cache, no-store, must-revalidate",
-      "Pragma": "no-cache",
-      "Expires": "0"
+      "Cache-Control": "no-cache"
     }
-  },
-  "root": "dist/scratch-game/browser",
-  "routes": {
-    "/**": "/index.html"
-  },
-  "clean_urls": true
+  }
 }
