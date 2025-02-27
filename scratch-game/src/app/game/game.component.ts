@@ -32,8 +32,9 @@ export class GameComponent {
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) {
     this.route.params.subscribe(() => {
       this.loadUsername();
-      this.fetchLossStreak();
       this.fetchDailyAttempts();
+      this.fetchLossStreak();
+      
     });
   }
 
@@ -190,7 +191,7 @@ export class GameComponent {
 
   // Récupérer le nombre de parties jouées aujourd’hui
   fetchDailyAttempts(): void {
-    this.http.get<number>(`${this.apiUrl}/attempts/${this.username}`).subscribe(
+    this.http.get<number>(`${this.apiUrl}/daily-count/${this.username}`).subscribe(
         (attempts: number) => {
             this.attemptsLeft = Math.max(attempts, 0); // Empêche les valeurs négatives
         },
