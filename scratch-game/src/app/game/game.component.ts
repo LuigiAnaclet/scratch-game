@@ -33,8 +33,6 @@ export class GameComponent {
     this.route.params.subscribe(() => {
       this.loadUsername();
       this.fetchLossStreak(); // Récupérer la série de défaites
-      this.fetchDailyAttempts(); // Récupère les tentatives restantes au chargement
-      //this.initializeGrid(); // Initialiser la grille avec des cadeaux
     });
   }
 
