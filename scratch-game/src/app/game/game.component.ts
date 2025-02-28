@@ -23,7 +23,7 @@ export class GameComponent {
   apiUrl: string = environment.apiUrl;
   history: any[] = []; // Stocker les 3 dernières participations
   isRigged: boolean = false;
-  attemptsLeft: number = 2;
+  attemptsLeft: number = 5;
   wonPrize: { name: string, image: string } | null = null;
   scratched: boolean[] = [];
 
