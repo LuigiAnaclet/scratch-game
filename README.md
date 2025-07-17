@@ -48,6 +48,8 @@ DB_DATABASE=xxxxx
 
 GET https://scratch-game.onrender.com/init-db
 
+---
+
 ## 🧪 Tester en ligne
 
 👉 Le jeu est disponible ici :
