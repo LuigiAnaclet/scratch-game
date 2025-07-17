@@ -54,4 +54,4 @@ GET https://scratch-game.onrender.com/init-db
 ## 🌱 Tester en ligne
 
 👉 Le jeu est disponible ici :  
-https://scratch-game.onrender.com
+[https://scratch-game.onrender.com](https://scratch-game-front.onrender.com/)
