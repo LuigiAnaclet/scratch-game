@@ -14,7 +14,7 @@ app.use(express.json());
 // Route permettant de faire les requètes vers la bdd
 app.use(users);
 app.use(history);
-app.use('/', initRoute);
+app.use(initRoute);
 
 app.listen(port, () => {
   console.log(`Serveur Express lancé`);
