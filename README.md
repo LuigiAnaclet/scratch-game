@@ -9,7 +9,7 @@ Ce projet fullstack repose sur **Node.js/Express** pour le backend, **PostgreSQL
 
 | Gagné 🎉 | Grattage 🎮 | Perdu ❌ |
 |---------|-------------|----------|
-| ![Gagné](./captures/gagne.png) | ![Jeu](./captures/jeu.png) | ![Perdu](./captures/perdu.png) |
+| ![Gagné](./scratch-game/public/gagne.png) | ![Jeu](./scratch-game/public/jeu.png) | ![Perdu](./scratch-game/public/perdu.png) |
 
 ---
 
