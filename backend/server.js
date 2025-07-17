@@ -6,6 +6,7 @@ const app = express();
 const port = 3600;
 const users = require('./routes/users');
 const history = require('./routes/history');
+const initRoute = require('./routes/init');
 app.use(cors());
 app.use(express.json());
 
@@ -13,6 +14,7 @@ app.use(express.json());
 // Route permettant de faire les requètes vers la bdd
 app.use(users);
 app.use(history);
+app.use('/', initRoute);
 
 app.listen(port, () => {
   console.log(`Serveur Express lancé`);
