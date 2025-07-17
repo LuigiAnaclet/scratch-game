@@ -43,6 +43,7 @@ DB_PORT=5432
 DB_USER=xxxxx
 DB_PASSWORD=xxxxx
 DB_DATABASE=xxxxx
+```
 
 2. Lancer la route d'initialisation (une seule fois) pour créer les tables :
 
@@ -50,7 +51,7 @@ GET https://scratch-game.onrender.com/init-db
 
 ---
 
-## 🧪 Tester en ligne
+## 🌱 Tester en ligne
 
-👉 Le jeu est disponible ici :
+👉 Le jeu est disponible ici :  
 https://scratch-game.onrender.com
